@@ -1,10 +1,11 @@
 'use strict';
 
 // Modules
-var webpack = require('webpack');
-var autoprefixer = require('autoprefixer');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+const autoprefixer = require('autoprefixer');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ngAnnotatePlugin = require('ng-annotate-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = function makeWebpackConfig (options) {
   /**
@@ -175,6 +176,9 @@ module.exports = function makeWebpackConfig (options) {
     // Disabled when in test mode or not in build mode
     new ExtractTextPlugin('[name].[hash].css', {
       disable: !BUILD || TEST
+    }),
+    new ngAnnotatePlugin({
+      add: true
     })
   ];
 
