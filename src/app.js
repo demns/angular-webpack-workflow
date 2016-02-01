@@ -1,3 +1,5 @@
+import 'bootstrap/dist/css/bootstrap.css';
+
 import home from './features/home/home.index.js';
 import routing from '../config/app.config.js';
 import uirouter from 'angular-ui-router';
