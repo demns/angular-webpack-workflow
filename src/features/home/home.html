@@ -1,8 +1,9 @@
-<div id="home-header" class="jumbotron">
+<div class="home-header jumbotron">
   <greeting name="home.name"></greeting>
+
+  <div class="btn-group home-header__btn-group" role="group" aria-label="home-label">
+    <button class="btn btn-default" ng-click="home.changeName()">Change</button>
+    <button class="btn btn-default" ng-click="home.randomName()">Random</button>
+  </div>
 </div>
 
-<div class="btn-group" role="group" aria-label="home-label">
-  <button class="btn btn-default" ng-click="home.changeName()">Change</button>
-  <button class="btn btn-default" ng-click="home.randomName()">Random</button>
-</div>
